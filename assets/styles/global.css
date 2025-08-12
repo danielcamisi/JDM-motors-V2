@@ -1,0 +1,37 @@
+/* CSS */
+@import url("https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700");
+
+.color-1 {
+  color: #7a2a2c;
+}
+.color-2 {
+  color: #c8bab7;
+}
+.color-3 {
+  color: #d3c5c8;
+}
+.color-4 {
+  color: #e7d1d0;
+}
+.color-5 {
+  color: #f0f4f2;
+}
+
+/* CSS Variables */
+:root {
+  --color-primary: #C84343;       /* Vermelho suave */
+  --color-accent: #E10600;        /* Vermelho vibrante */
+  --color-secondary: #FFFFFF;     /* Branco */
+  --color-dark: #111111;          /* Preto carvão */
+  --color-gray: #B0B0B0;          /* Cinza metálico */
+  --color-light-gray: #F3F3F3;    /* Fundo neutro */
+}
+* {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  margin:0;
+  padding:0;
+  transition:0.2s ease-in-out all; ;
+}
+
+
