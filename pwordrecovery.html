@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/global.css" />
+      <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+       <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
+    />
+    <link rel="stylesheet" href="assets/styles/pwordrecovery.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
+    />
+     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <title>JDM Motors</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/imgs/logo.png" />
+        </a>
+        <a href="index.html"> <span>JDM</span> Motors </a>
+      </div>
+      <div>
+        <nav>
+          <ul>
+            <a>Anunciar</a>
+          </ul>
+          <ul>
+            <a>Peças</a>
+          </ul>
+          <ul>
+            <a>Carros</a>
+          </ul>
+          <ul>
+            <a>Contato</a>
+          </ul>
+          <ul>
+            <a>Carrinho</a>
+          </ul>
+          <ul>
+            <a href="login.html">Perfil</a>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="recovery-pword">
+        <div class="border-div">
+            <div class="recovery-form-div">
+                <form id="recovery-form" action="/recover-password" method="POST">
+                    <h1>Recuperar Senha</h1>
+                    <p>Digite seu e-mail para receber instruções de recuperação.</p>
+                    <input type="email" name="email" placeholder="E-mail" required />
+                    <button type="submit">Recuperar Senha</button>
+                </form>
+            </div>
+     </section>
+</body>
+</html>

@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.border-div{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.recovery-pword{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.recovery-form-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:500px;
+    max-width: 400px;
+    height: 400px;
+    border:2px solid var(--color-gray);
+    border-radius: 8px;
+}
+#recovery-form{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    gap:1em;
+    color:var(--color-dark);
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+}
+#recovery-form button{
+    width: 100%;
+    padding: 0.5em;
+    border: none;
+    background-color: var(--color-accent);
+    color: var(--color-light-gray);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius:8px;
+}
+#recovery-form button:hover{
+    background-color: var(--color-light-gray);
+    border: 2.5px solid var(--color-accent);
+    color: var(--color-accent);
+    transition: 0.3s ease-in-out all;
+}
+
+#recovery-form input{
+    width: 100%;
+    padding: 0.5em;
+    border:0;
+    background-color: transparent;
+    border-bottom: 2px solid var(--color-accent);
+}
+
+#recovery-form input:focus{
+    outline: none;
+    box-shadow: 0;
+    border-bottom: 3px solid var(--color-accent);
+}
+
+#recovery-form h1{
+    text-align: center; 
+    margin:0 auto;
+    font-size: 25px;
+    font-weight: bolder;
+    color:var(--color-accent);
+}

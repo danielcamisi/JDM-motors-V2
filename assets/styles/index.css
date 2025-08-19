@@ -1,56 +1,8 @@
-header {
-  display: flex;
-  align-items: center;
-  gap: 45em;
-  justify-content: space-evenly;
-  padding: 1em;
-  max-height: 3em;
-  width: 100%;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+body {
+  background-color: var(--color-secondary);
 }
 
-.logo {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 15em;
 
-  font-size: 28px;
-
-  color: var(--color-primary);
-}
-a:visited {
-  color: inherit; /* Ou defina uma cor específica */
-}
-
-a {
-  text-decoration: none;
-}
-
-.logo img {
-  width: 2em;
-  height: 2em;
-}
-
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 2em;
-}
-
-ul a {
-  cursor: pointer;
-}
-
-ul:hover {
-  transition: 0.3s ease-in-out all;
-  transform: scale(1.1);
-  color: var(--color-primary);
-}
 
 #first-section {
   display: flex;
@@ -59,10 +11,12 @@ ul:hover {
 
 .carrossel {
   border-radius: 15px;
-  margin: 5em;
-  width: 160vh;
-  height: 80vh;
+  width:1400px;
+  height: 800px;
+  margin:2em;
+ 
   background-image: url("../imgs/corrossel.jpg");
+  object-fit: cover;
   background-position: center;
   background-repeat: no-repeat;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -106,27 +60,112 @@ ul:hover {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-#carrossel-inside button:hover{
-    cursor:pointer;
-    
-    transform: scale(1.15);
-    transition: 0.3s ease-in-out all;
+#carrossel-inside button:hover {
+  cursor: pointer;
 
-    color:var(--color-accent);
-    background-color: rgba(0, 0, 0, 0.22);
-    border:7px solid var(--color-accent);
+  transform: scale(1.15);
+  transition: 0.3s ease-in-out all;
+
+  color: var(--color-accent);
+  background-color: rgba(0, 0, 0, 0.22);
+  border: 7px solid var(--color-accent);
 }
 
 span {
   color: var(--color-accent);
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  border-bottom: 1px solid var(--color-accent);
+  font-weight: bolder;
 }
 
-#main-posted-cars{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 380px;
+  height: 400px;
+
+  background-color: transparent;
+
+  padding: 2em;
+}
+
+.text-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding-top: 1em;
+  color: var(--color-dark);
+  font-size: 18px;
+}
+
+.text-card button {
+  max-height: 3em;
+  height: 3em;
+  max-width: 10em;
+  width: 10em;
+  font-size: 16px;
+
+  border-radius: 15px;
+  border: 0;
+
+  color: var(--color-secondary);
+  background-color: var(--color-accent);
+
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.text-card button:hover {
+  cursor: pointer;
+
+  transform: scale(1.15);
+  transition: 0.3s ease-in-out all;
+
+  color: var(--color-accent);
+  background-color: transparent;
+  border: 3px solid var(--color-accent);
+}
+
+.cards-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  padding: 1em;
+}
+
+#card-car {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#card-notices {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#card-peace {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.img-card img:hover {
+  cursor: pointer;
+
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out all;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }

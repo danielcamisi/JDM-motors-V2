@@ -34,4 +34,76 @@
   transition:0.2s ease-in-out all; ;
 }
 
+header {
+  display: flex;
+  align-items: center;
+  gap: 45em;
+  justify-content: space-evenly;
+  padding: 2.5em;
+  max-height: 3em;
+  width: 100%;
+  background-color: transparent;
+  border-bottom: 1.5px solid var(--color-gray);
 
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 15em;
+
+  font-size: 28px;
+
+  color: var(--color-dark);
+}
+
+.logo img:hover {
+  cursor: pointer;
+  transition: 0.3s ease-in-out all;
+  transform: scale(1.1);
+  border-radius: 10%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+
+}
+
+.logo a:hover {
+  cursor: pointer;
+  color: var(--color-accent);
+  transition: 0.3s ease-in-out all;
+  transform: scale(1.1);
+}
+a:visited {
+  color: inherit; /* Ou defina uma cor específica */
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo img {
+  width: 2em;
+  height: 2em;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2em;
+}
+
+ul a {
+  cursor: pointer;
+}
+
+ul:hover {
+  transition: 0.3s ease-in-out all;
+  transform: scale(1.1);
+  color: var(--color-accent);
+}
