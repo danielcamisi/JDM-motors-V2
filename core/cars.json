@@ -1,0 +1,134 @@
+{
+  "cars": [
+    {
+      "name": "Nissan Skyline GT-R R34",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Toyota Supra MK4",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Mazda RX-7 FD3S",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Honda NSX NA1",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Mitsubishi Lancer Evolution VI",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Subaru Impreza WRX STI GC8",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Nissan Silvia S15",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Toyota AE86 Trueno",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Honda Civic EK9 Type R",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Mazda MX-5 Miata NA",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Toyota Chaser JZX100",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Nissan 300ZX Z32",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Honda S2000 AP1",
+      "image":"../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Mitsubishi 3000GT VR-4",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Nissan Laurel C35",
+      "image": "../assets/imgs/login.jpg"
+    },
+    {
+      "name": "Toyota Soarer JZZ30",
+      "image": "../assets/imgs/login.jpg"
+    }
+  ],
+  "peace":[
+    {
+      "name": "Nissan Skyline GT-R R34",
+      "image": "../assets/imgs/roda.png"
+    },
+    {
+      "name": "Toyota Supra MK4",
+      "image": "../assets/imgs/roda.png"
+    },
+    {
+      "name": "Mazda RX-7 FD3S",
+      "image": "../assets/imgs/roda.png"
+    },
+    {
+      "name": "Honda NSX NA1",
+      "image": "../assets/imgs/roda.png"
+    },
+    {
+      "name": "Mitsubishi Lancer Evolution VI",
+      "image": "../assets/imgs/roda.png"
+    },
+    {
+      "name": "Subaru Impreza WRX STI GC8",
+      "image": "../assets/imgs/roda.png"
+    },
+    {
+      "name": "Nissan Silvia S15",
+      "image": "../assets/imgs/roda.png"
+    },
+    {
+      "name": "Toyota AE86 Trueno",
+      "image":"../assets/imgs/roda.png"
+    },
+    {
+      "name": "Honda Civic EK9 Type R",
+      "image": "../assets/imgs/roda.png"
+    },
+    {
+      "name": "Mazda MX-5 Miata NA",
+      "image": "../assets/imgs/roda.png"
+    },
+    {
+      "name": "Toyota Chaser JZX100",
+      "image": "../assets/imgs/roda.png"
+    },
+    {
+      "name": "Nissan 300ZX Z32",
+      "image": "../assets/imgs/roda.png"
+    },
+    {
+      "name": "Honda S2000 AP1",
+      "image":"../assets/imgs/roda.png"
+    },
+    {
+      "name": "Mitsubishi 3000GT VR-4",
+      "image": "../assets/imgs/roda.png"
+    },
+    {
+      "name": "Nissan Laurel C35",
+      "image": "../assets/imgs/roda.png"
+    },
+    {
+      "name": "Toyota Soarer JZZ30",
+      "image": "../assets/imgs/roda.png"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "jdm-motors-v2",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon core/app.js",
+    "db": "json-server --watch core/cars.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "json-server": "^1.0.0-beta.3",
+    "nodemon": "^3.1.10"
+  }
+}

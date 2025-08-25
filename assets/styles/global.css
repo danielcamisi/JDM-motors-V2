@@ -25,9 +25,10 @@
   --color-dark: #111111;          /* Preto carvão */
   --color-gray: #B0B0B0;          /* Cinza metálico */
   --color-light-gray: #F3F3F3;    /* Fundo neutro */
+  --color-primary-op: #c8434377
 }
 * {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Space Grotesk", "Noto Sans", sans-serif;
   font-weight: bold;
   margin:0;
   padding:0;
