@@ -35,6 +35,10 @@
   transition:0.2s ease-in-out all; ;
 }
 
+input, textarea, select, button:focus {
+    outline: none;
+}
+
 header {
   display: flex;
   align-items: center;

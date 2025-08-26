@@ -76,3 +76,6 @@ function carregar() {
       });
   }
   
+  function viewStorage(){
+     window.location.href = "cars.html";
+  }

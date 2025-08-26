@@ -1,0 +1,143 @@
+#img-announce {
+  border-radius: 8px;
+  width: 620px;
+  height: 500px;
+  object-fit: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#img-announce label {
+  cursor: pointer;
+  background-color: white;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  padding: 0.7em;
+  font-size: 1em;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+#img-announce span {
+  font-size: 6em;
+  line-height: 1em;
+}
+
+.main-announce {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 3em;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  border-radius: 5px;
+  margin: 5em;
+  margin-left: 12em;
+  margin-right: 12em;
+}
+#desc-announce {
+  display: flex;
+  width: 620px;
+  height: 500px;
+}
+.hidden {
+  display: none !important;
+}
+
+#logged-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding-top: 5em;
+  font-size: 1.2em;
+}
+
+#logged-in form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#logged-in input {
+  border: 0;
+  background-color: transparent;
+  border-bottom: 2px solid var(--color-primary);
+  padding: 0.5em;
+}
+
+#logged-in button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.7em;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#logged-in button:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  transform: scale(1.05);
+}
+#logged-in input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+#logged-in textarea {
+  background-color: transparent;
+  width: auto;
+  height: 6em;
+  max-height: 8em;
+  border: 0;
+  border-bottom: 2px solid var(--color-primary);
+  padding: 0.5em;
+}
+
+#logged-in select {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid var(--color-primary);
+  appearance: none; /* Remove o estilo padrão */
+  -webkit-appearance: none; /* Para navegadores WebKit */
+  -moz-appearance: none; /* Para Firefox */
+}
+
+#logged-in select:focus {
+  outline: none;
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+#logged-in select option {
+  background-color: var(--color-primary);
+  color: white;
+  appearance: none; /* Remove o estilo padrão */
+  -webkit-appearance: none; /* Para navegadores WebKit */
+  -moz-appearance: none; /* Para Firefox */
+}
+
+#logged-in select option:hover {
+  background-color: red;
+  color: white;
+  appearance: none; /* Remove o estilo padrão */
+  -webkit-appearance: none; /* Para navegadores WebKit */
+  -moz-appearance: none; /* Para Firefox */
+}
+
+#fileInput {
+  display: none;
+}
