@@ -37,9 +37,12 @@
           <ul>
             <a href="contactus.html">Contato</a>
           </ul>
-          <ul>
-            <a href="login.html">Perfil</a>
+           <ul id="logout-ul">
+            <a href="login.html">Cadastrar</a>
           </ul>
+          <ul class="hidden" id="login-ul">
+            <a onClick="goToProfile()"><div class="div-img-header"><img src="/assets/imgs/login.jpg"></div></a>
+            </ul>
         </nav>
       </div>
     </header>
@@ -51,7 +54,7 @@
             <form class="form-class">
                 <label>Seu nome:</label>
                 <input type="name" id="name" placeholder="Digite seu nome para contato">
-                <label> Seu E-mail:</label>
+                <label>Seu E-mail:</label>
                 <input type="e-mail" id="email" placeholder="Digite seu e-mail para contato">
                 <label>Mensagem:</label>
                 <textarea id="message" placeholder="Deixe aqui a mensagem que deseja nos encaminhar"></textarea>

@@ -44,6 +44,7 @@
   margin: 5em;
   margin-left: 12em;
   margin-right: 12em;
+  gap:5em;
 }
 #desc-announce {
   display: flex;
@@ -60,7 +61,6 @@
   align-items: center;
   justify-content: center;
   gap: 1em;
-  padding-top: 5em;
   font-size: 1.2em;
 }
 

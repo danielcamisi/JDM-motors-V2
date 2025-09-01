@@ -16,8 +16,8 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <title>JDM Motors</title>
   </head>
-  <body>
-    <header>
+  <body onLoad="checkLoginStatus()">
+    <header onload="checkLoginHeader()">
       <div class="logo">
         <a href="index.html">
           <img src="assets/imgs/logo.png" />
@@ -38,9 +38,12 @@
           <ul>
             <a href="contactus.html">Contato</a>
           </ul>
-          <ul>
-            <a href="login.html">Perfil</a>
+            <ul id="logout-ul">
+            <a href="login.html">Cadastrar</a>
           </ul>
+          <ul class="hidden" id="login-ul">
+            <a onClick="goToProfile()"><div class="div-img-header"><img src="/assets/imgs/login.jpg"></div></a>
+            </ul>
         </nav>
       </div>
     </header>
@@ -167,6 +170,15 @@
     </footer>
 
     <script>
+      function checkLoginStatus() {
+        const token = localStorage.getItem("token");
+        if (token) {
+          window.location.href = "index.html"; // Redireciona para a página inicial se o usuário já estiver logado
+        } else {
+          console.log("Usuário não está logado");
+        }
+      }
+    
       const loginForm = document.getElementById("login-form");
 
      
@@ -195,10 +207,12 @@
           if (response.ok) {
          
             localStorage.setItem("token", data.token);
+            localStorage.setItem("userId", data.userId);
             alert("Login realizado com sucesso!");
+            console.log("User ID armazenado:", data.userId); 
 
             
-            window.location.href = "index.html";
+            window.location.href = `profile.html?id=${data.userId}`;
           } else {
             
             alert(data.msg || "Erro ao realizar o login. Tente novamente.");

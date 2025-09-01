@@ -14,9 +14,10 @@
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="core/app.js"></script>
     <title>JDM Motors</title>
   </head>
-  <body>
+  <body onload="checkLoginStatus()">
     <header>
       <div class="logo">
         <a href="index.html">
@@ -39,9 +40,12 @@
             <a href="contactus.html">Contato</a>
           </ul>
       
-          <ul>
-            <a href="login.html">Perfil</a>
+           <ul id="logout-ul">
+            <a href="login.html">Cadastrar</a>
           </ul>
+          <ul class="hidden" id="login-ul">
+            <a onClick="goToProfile()"><div class="div-img-header"><img src="/assets/imgs/login.jpg"></div></a>
+            </ul>
         </nav>
       </div>
     </header>

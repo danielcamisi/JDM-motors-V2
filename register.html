@@ -16,8 +16,8 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <title>JDM Motors</title>
   </head>
-  <body>
-    <header>
+  <body onload="checkLoginStatus()">
+    <header onload="checkLoginHeader()">
       <div class="logo">
         <a href="index.html">
           <img src="assets/imgs/logo.png" />
@@ -38,9 +38,12 @@
           <ul>
             <a href="contactus.html">Contato</a>
           </ul>
-          <ul>
-            <a href="login.html">Perfil</a>
+            <ul id="logout-ul">
+            <a href="login.html">Cadastrar</a>
           </ul>
+          <ul class="hidden" id="login-ul">
+            <a onClick="goToProfile()"><div class="div-img-header"><img src="/assets/imgs/login.jpg"></div></a>
+            </ul>
         </nav>
       </div>
     </header>
@@ -188,6 +191,15 @@
     </footer>
 
     <script>
+      function checkLoginStatus() {
+        const token = localStorage.getItem("token");
+        if (token) {
+          window.location.href = "index.html"; // Redireciona para a página inicial se o usuário já estiver logado
+        } else {
+          console.log("Usuário não está logado");
+        }
+      }
+
       const registerForm = document.getElementById("register-form");
 
       // Adiciona o evento de "submit" ao formulário
@@ -222,7 +234,7 @@
 
           if (response.ok) {
             alert("Usuário registrado com sucesso!");
-            window.location.href = "login.html"; // Redireciona para a página de login
+            window.location.href = `profile.html?id=${data.userId}`; // Redireciona para a página de login
           } else {
             alert(data.msg || "Erro ao registrar. Tente novamente.");
           }
@@ -232,5 +244,6 @@
         }
       });
     </script>
+    <script src="core/app.js"></script>
   </body>
 </html>

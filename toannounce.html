@@ -13,6 +13,7 @@
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="/core/app.js"></script>
     <title>JDM Motors</title>
   </head>
   <body onload="checkLoginStatus()">
@@ -37,37 +38,63 @@
           <ul>
             <a href="contactus.html">Contato</a>
           </ul>
-          <ul>
+          <ul id="logout-ul">
             <a href="login.html">Perfil</a>
           </ul>
+          <ul class="hidden" id="login-ul">
+            <a onClick="goToProfile()"><div class="div-img-header"><img src="/assets/imgs/login.jpg"></div></a>
+          
         </nav>
       </div>
     </header>
 
     <section class="main-announce">
-      <div id="img-announce" class="hidden">
-        
-       <label for="fileInput"> <span>+</span> Selecione uma imagem</label>
-      <input type="file" id="fileInput" multiple />
-      </div>
-
       <div id="logged-in" class="hidden">
         <h1>ANUNCIAR</h1>
-        <form>
-          <label>Categoria do produto:</label>
-          <select>
-            <option value="carro">Carro</option>
-            <option value="peca">Peça</option>
-          </select>
+        <form id="carForm">
           <label>Título do anúncio:</label>
-          <input type="text" placeholder="Digite o título do anúncio" />
+          <input
+            type="text"
+            name="announceName"
+            placeholder="Digite o título do anúncio"
+            required
+          />
+
+          <label>Ano de fabricação do Veículo:</label>
+          <input
+            type="number"
+            name="year"
+            placeholder="Digite o ano do produto"
+            required
+          />
+
+          <label>Detalhes:</label>
+          <input
+            type="text"
+            name="details"
+            placeholder="Digite os detalhes do veículo"
+          />
+
+          <label>Preço:</label>
+          <input
+            type="number"
+            name="price"
+            placeholder="Digite o preço do produto"
+            required
+          />
+
           <label>Descrição do produto:</label>
           <textarea
+            name="desc"
             placeholder="Descreva o produto que deseja anunciar"
+            required
           ></textarea>
-          <label>Preço:</label>
-          <input type="text" placeholder="Digite o preço do produto" />
-          <label>Adicione as fotos a esquerda:</label>
+
+          <div id="img-announce" class="hidden">
+            <label for="fileInput"> <span>+</span> Selecione uma imagem</label>
+            <input name="img" type="file" id="fileInput" multiple />
+          </div>
+
           <button type="submit">Anunciar</button>
         </form>
       </div>
@@ -83,22 +110,38 @@
       </div>
     </section>
     <script>
-      function checkLoginStatus() {
-        const token = localStorage.getItem("token");
+     
 
-        if (token) {
-          document.getElementById("logged-in").classList.remove("hidden");
-          document.getElementById("img-announce").classList.remove("hidden");
-        } else {
-          document.getElementById("desc-announce").classList.remove("hidden");
-        }
-      }
+      document
+        .getElementById("carForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Impede o envio padrão do formulário
 
-      function logout() {
-        localStorage.removeItem("token");
-        alert("Você foi desconectado com sucesso!");
-        window.location.reload();
-      }
+          const token = localStorage.getItem("token"); // Obtém o token do localStorage
+          const formData = new FormData(this); // Cria um objeto FormData com os dados do formulário
+
+          // Envia a requisição POST para o servidor
+          fetch("http://localhost:4200/cars", {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${token}`, // Adiciona o token ao cabeçalho de autorização
+            },
+            body: formData, // Inclui o FormData no corpo da requisição
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data && data._id) {
+                alert("Anúncio criado com sucesso!");
+              } else {
+                alert("Erro ao criar o anúncio: " + data.msg);
+              }
+            })
+            .catch((error) => {
+              console.error("Erro:", error);
+              alert("Ocorreu um erro ao tentar criar o anúncio.");
+            });
+        });
     </script>
+    <script src="core/app.js"></script>
   </body>
 </html>

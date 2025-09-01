@@ -16,7 +16,7 @@
     <title>JDM Motors</title>
   </head>
   <body onload="carregarPeace()">
-    <header>
+    <header onload="checkLoginHeader()">
       <div class="logo">
         <a href="index.html">
           <img src="assets/imgs/logo.png" />
@@ -37,9 +37,12 @@
           <ul>
             <a href="contactus.html">Contato</a>
           </ul>
-          <ul>
-            <a href="login.html">Perfil</a>
+          <ul  id="logout-ul">
+            <a onClick="goToProfile()">Cadastrar</a>
           </ul>
+          <ul class="hidden" id="login-ul">
+            <a href="profile.html"><div class="div-img-header"><img src="/assets/imgs/login.jpg"></div></a>
+            </ul>
         </nav>
       </div>
     </header>
