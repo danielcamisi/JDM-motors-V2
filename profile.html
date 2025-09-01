@@ -16,7 +16,7 @@
     <script src="core/app.js"></script>
     <title>JDM Motors</title>
   </head>
-  <body onload="checkLoginStatus()">
+  <body onload=" myAnnounce()">
     <header>
       <div class="logo">
         <a href="index.html">
@@ -55,14 +55,11 @@
       <p>Nome: <span id="user-name">Carregando...</span></p>
       <p>Nome de Usuário: <span id="username">Carregando...</span></p>
       <p>Email: <span id="user-email">Carregando...</span></p>
+
+      <button onClick="logout()">Sair</button>
     </div>
     <hr />
     <h3>Meus anúncios</h3>
-    <div class="all">
-      <div class="container" id="cars-container"></div>
-    </div>
-
-    <hr />
     <div class="all">
       <div class="container" id="cars-container"></div>
     </div>
@@ -105,5 +102,28 @@
         alert("ID do usuário não encontrado.");
       }
     });
+
+    function myAnnounce() {
+  const userID = localStorage.getItem("userId");
+  fetch(`http://localhost:4200/cars/myannounce/${userID}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((myAnnounces) => {
+      if (!Array.isArray(myAnnounces)) {
+        console.error("Resposta inesperada:", myAnnounces);
+        return;
+      }
+      console.log("Meus anúncios:", myAnnounces);
+      // aqui você pode iterar e mostrar os cards
+    })
+    .catch((error) => {
+      console.error("Erro ao buscar anúncios do usuário:", error);
+    });
+}
+
   </script>
 </html>

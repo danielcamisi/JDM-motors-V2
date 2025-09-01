@@ -12,12 +12,12 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
+    <script src="core/app.js"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <title>JDM Motors</title>
   </head>
-  <body onload="checkLoginStatus()">
-    <header onload="checkLoginHeader()">
+  <body>
+    <header>
       <div class="logo">
         <a href="index.html">
           <img src="assets/imgs/logo.png" />
@@ -223,18 +223,18 @@
             },
             body: JSON.stringify({
               name,
-              nUser: username, // Nome de usuário (corresponde ao schema)
+              nUser: username, 
               email,
-              pword: password, // Senha (corresponde ao schema)
-              confirmPword: confirmPassword, // Não faz parte do schema, mas é usado no back-end
+              pword: password, 
+              confirmPword: confirmPassword, 
             }),
           });
 
-          const data = await response.json(); // Converte a resposta da API para JSON
+          const data = await response.json(); 
 
           if (response.ok) {
             alert("Usuário registrado com sucesso!");
-            window.location.href = `profile.html?id=${data.userId}`; // Redireciona para a página de login
+            window.location.href = `login.html`; 
           } else {
             alert(data.msg || "Erro ao registrar. Tente novamente.");
           }

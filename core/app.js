@@ -19,21 +19,24 @@
 // });
 
 function carregar() {
-  fetch("http://localhost:3000/cars")
+  fetch("http://localhost:4200/cars/list")
     .then((response) => response.json())
     .then((cars) => {
       const container = document.getElementById("cars-container");
+      container.innerHTML = ""; // limpar cards antigos
 
-      cars.map((car) => {
+      cars.forEach((car) => {
         const card = document.createElement("div");
         card.classList.add("card");
 
         const img = document.createElement("img");
-        img.src = car.image;
-        img.alt = car.name;
+        img.src = img.src = car.img.startsWith("/uploads/")
+          ? `http://localhost:4200${car.img}`
+          : `http://localhost:4200/uploads/${car.img}`; // ✅ certifique-se que este caminho está acessível
+        img.alt = car.announceName;
 
         const title = document.createElement("h3");
-        title.textContent = car.name;
+        title.textContent = car.announceName;
 
         const button = document.createElement("button");
         button.textContent = "Ver Anúncio";
@@ -76,6 +79,9 @@ function carregarPeace() {
     });
 }
 
+
+
+
 function viewStorage() {
   window.location.href = "cars.html";
 }
@@ -108,3 +114,8 @@ function goToProfile() {
     alert("Usuário não está logado.");
   }
 }
+
+window.onload = function () {
+  carregar();
+  checkLoginStatus();
+};
