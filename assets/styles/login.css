@@ -11,7 +11,7 @@ body{
     justify-content: center;
 
     width: 100%;
-    height: 100vh;
+    height: 120vh;
     border-radius: 8px;
   }
 
@@ -32,8 +32,8 @@ body{
     justify-content: center;
     gap:2em;
     color:var(--color-dark);
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     padding: 2em;
 }
 
@@ -58,6 +58,7 @@ body{
 #login-form input{
     width: 100%;
     padding: 0.5em;
+    margin: 0;
     border:0;
     border-bottom: 2px solid var(--color-primary);
     font-size: 16px;
@@ -93,17 +94,42 @@ body{
     background-image: url("/assets/imgs/login.jpg");
     background-size: cover;
     background-position: center;
-    object-fit: cover;
     width: 500px;  
-    height: 800px;
+    height: auto;
     border-top-right-radius:8px;
     border-bottom-right-radius:8px;
-}
+}   
 
 .border-div{
     display: flex;
+    flex-direction: row;
     border:2px solid var(--color-gray);
     border-radius: 8px;
-   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 
+}
+
+
+@media screen and (max-width: 1200px ), (max-height:620px){
+    .border-div{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+    }
+    .login-form{
+        width: auto;
+    }
+    .img-login-div{
+        display:none
+    }
+    .form-div{
+        height: 100%;
+        width: 400px;
+    }
+    .login-form input{
+        width: 200%
+    }
+    .login{
+        padding-block:20em;
+    }
 }

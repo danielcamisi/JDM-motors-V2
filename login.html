@@ -17,7 +17,7 @@
     <title>JDM Motors</title>
   </head>
   <body>
-    <header>
+   <header>
       <div class="logo">
         <a href="index.html">
           <img src="assets/imgs/logo.png" />
@@ -38,15 +38,32 @@
           <ul>
             <a href="contactus.html">Contato</a>
           </ul>
-            <ul id="logout-ul">
+      
+           <ul id="logout-ul">
             <a href="login.html">Cadastrar</a>
           </ul>
           <ul class="hidden" id="login-ul">
             <a onClick="goToProfile()"><div class="div-img-header"><img src="/assets/imgs/login.jpg"></div></a>
             </ul>
         </nav>
-      </div>
-    </header>
+        <div class="menu-toggle">
+          <button onClick="dropdown()" class="flex flex-col justify-around h-8 w-8 p-1" for="menu-toggle"> 
+            <span class="h-0.5 rounded bg-gray-600 w-full"></span>
+            <span class="h-0.5 rounded bg-gray-600 w-full"></span>
+            <span class="h-0.5 rounded bg-gray-600 w-full"></span>
+          </button>
+          <div class="div-img-header"><img src="/assets/imgs/profile.png"></div>
+        </label>
+      </header>
+      <div id="dropdown-nav" class="hidden">
+          <ul id="menu-hamb" class="hidden">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="toannounce.html">Anúnciar</a></li>
+            <li><a href="contactus.html">Contato</a></li>
+            <li><a href="peace.html">Peças</a></li>
+            <li><a href="cars.html">Carros</a></li>
+          </ul>
+          </div>
 
     <section class="login">
       <div class="border-div">
@@ -85,17 +102,17 @@
             class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around"
           >
             <a
-              class="text-[#9c7a49] text-base font-normal leading-normal min-w-40"
+              class="text-[#C84343] text-base font-normal leading-normal min-w-40"
               href="#"
               >Sobre Nós</a
             >
             <a
-              class="text-[#9c7a49] text-base font-normal leading-normal min-w-40"
+              class="text-[#C84343] text-base font-normal leading-normal min-w-40"
               href="#"
               >Política de Privacidade</a
             >
             <a
-              class="text-[#9c7a49] text-base font-normal leading-normal min-w-40"
+              class="text-[#C84343] text-base font-normal leading-normal min-w-40"
               href="#"
               >Termos de Serviço</a
             >
@@ -103,7 +120,7 @@
           <div class="flex flex-wrap justify-center gap-4">
             <a href="#">
               <div
-                class="text-[#9c7a49]"
+                class="text-[#C84343]"
                 data-icon="InstagramLogo"
                 data-size="24px"
                 data-weight="regular"
@@ -123,7 +140,7 @@
             </a>
             <a href="#">
               <div
-                class="text-[#9c7a49]"
+                class="text-[#C84343]"
                 data-icon="FacebookLogo"
                 data-size="24px"
                 data-weight="regular"
@@ -143,7 +160,7 @@
             </a>
             <a href="#">
               <div
-                class="text-[#9c7a49]"
+                class="text-[#C84343]"
                 data-icon="TwitterLogo"
                 data-size="24px"
                 data-weight="regular"
@@ -162,7 +179,7 @@
               </div>
             </a>
           </div>
-          <p class="text-[#9c7a49] text-base font-normal leading-normal">
+          <p class="text-[#C84343] text-base font-normal leading-normal">
             © 2024 Auto Legends. Todos os direitos reservados.
           </p>
         </footer>

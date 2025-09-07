@@ -42,8 +42,8 @@ input, textarea, select, button:focus {
 header {
   display: flex;
   align-items: center;
-  gap: 45em;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding-inline:15em;
   padding: 2.5em;
   max-height: 3em;
   width: 100%;
@@ -83,7 +83,7 @@ header {
   transform: scale(1.1);
 }
 a:visited {
-  color: inherit; /* Ou defina uma cor específica */
+  color: inherit;
 }
 
 a {
@@ -101,13 +101,14 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   gap: 2em;
+  width: auto;
 }
 
-ul a {
+header ul a {
   cursor: pointer;
 }
 
-ul:hover {
+header ul:hover {
   transition: 0.3s ease-in-out all;
   transform: scale(1.1);
   color: var(--color-accent);
@@ -118,8 +119,8 @@ ul:hover {
 }
 
 .div-img-header{
-  width: 4em;
-  height: 4em;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   overflow: hidden;
   border:2px solid var(--color-primary);
@@ -129,4 +130,41 @@ ul:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.menu-toggle{
+  display:none
+}
+
+@media screen AND (max-width:1200px){
+  nav{
+    display:none
+  }
+  .menu-toggle{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:2em;
+  }
+  
+}
+.hidden{
+  display: none !important;
+}
+
+#dropdown-nav{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#dropdown-nav li{
+  text-align: center;
+  padding:10px;
+  color:var(--color-gray);
+}
+
+#dropdown-nav li:hover{
+  transform: scale(1.02);
+  color:var(--color-accent);
 }

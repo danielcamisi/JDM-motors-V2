@@ -17,7 +17,7 @@
     <title>JDM Motors</title>
   </head>
   <body>
-    <header>
+   <header>
       <div class="logo">
         <a href="index.html">
           <img src="assets/imgs/logo.png" />
@@ -38,15 +38,32 @@
           <ul>
             <a href="contactus.html">Contato</a>
           </ul>
-          <ul id="logout-ul">
-            <a href="login.html">Perfil</a>
+      
+           <ul id="logout-ul">
+            <a href="login.html">Cadastrar</a>
           </ul>
           <ul class="hidden" id="login-ul">
             <a onClick="goToProfile()"><div class="div-img-header"><img src="/assets/imgs/login.jpg"></div></a>
-          
+            </ul>
         </nav>
-      </div>
-    </header>
+        <div class="menu-toggle">
+          <button onClick="dropdown()" class="flex flex-col justify-around h-8 w-8 p-1" for="menu-toggle"> 
+            <span class="h-0.5 rounded bg-gray-600 w-full"></span>
+            <span class="h-0.5 rounded bg-gray-600 w-full"></span>
+            <span class="h-0.5 rounded bg-gray-600 w-full"></span>
+          </button>
+          <div class="div-img-header"><img src="/assets/imgs/profile.png"></div>
+        </label>
+      </header>
+      <div id="dropdown-nav" class="hidden">
+          <ul id="menu-hamb" class="hidden">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="toannounce.html">Anúnciar</a></li>
+            <li><a href="contactus.html">Contato</a></li>
+            <li><a href="peace.html">Peças</a></li>
+            <li><a href="cars.html">Carros</a></li>
+          </ul>
+          </div>
 
     <section class="main-announce">
       <div id="logged-in" class="hidden">

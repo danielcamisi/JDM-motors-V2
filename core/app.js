@@ -51,7 +51,7 @@ function carregar() {
 }
 
 function carregarPeace() {
-  fetch("http://localhost:3000/peace")
+  fetch("http://localhost:4200/peace")
     .then((response) => response.json())
     .then((cars) => {
       const container = document.getElementById("cars-container");
@@ -80,8 +80,6 @@ function carregarPeace() {
 }
 
 
-
-
 function viewStorage() {
   window.location.href = "cars.html";
 }
@@ -90,20 +88,21 @@ function checkLoginStatus() {
   const token = localStorage.getItem("token");
 
   if (token) {
-    document.getElementById("logout-ul").classList.add("hidden");
-    document.getElementById("login-ul").classList.remove("hidden");
-    document.getElementById("logged-in").classList.remove("hidden");
-    document.getElementById("img-announce").classList.remove("hidden");
+    document.getElementById("logout-ul")?.classList.add("hidden");
+    document.getElementById("login-ul")?.classList.remove("hidden");
+
+    document.getElementById("logged-in")?.classList.remove("hidden");
+    document.getElementById("img-announce")?.classList.remove("hidden");
   } else {
-    document.getElementById("desc-announce").classList.remove("hidden");
-    document.getElementById("logout-ul").classList.remove("hidden");
+    document.getElementById("desc-announce")?.classList.remove("hidden");
+    document.getElementById("logout-ul")?.classList.remove("hidden");
   }
 }
 
 function logout() {
   localStorage.removeItem("token");
   alert("Você foi desconectado com sucesso!");
-  window.location.reload();
+  window.location.href ="index.html";
 }
 
 function goToProfile() {
@@ -119,3 +118,13 @@ window.onload = function () {
   carregar();
   checkLoginStatus();
 };
+
+  function dropdown() {
+  const myDropdown = document.getElementById("dropdown-nav");
+  const myNavDrop = document.getElementById("menu-hamb");
+
+  myDropdown.classList.toggle("hidden");
+  myNavDrop.classList.toggle("hidden");
+
+
+}
