@@ -111,7 +111,7 @@ function logout() {
 function goToProfile() {
   const userId = localStorage.getItem("userId");
   if (userId) {
-    window.location.href = `profile.html?id=${userId}`; // Redireciona para a página de perfil
+    window.location.href = `profile.html?id=${userId}`;
   } else {
     alert("Usuário não está logado.");
   }

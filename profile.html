@@ -224,9 +224,23 @@
         button.textContent = "Ver Anúncio";
         button.classList.add("btn-show");
 
+        const buttonRemove = document.createElement("button");
+        buttonRemove.textContent = "Deletar";
+        buttonRemove.classList.add("btn-show");
+        buttonRemove.addEventListener("click", function(){
+          fetch(`http://localhost:4200/cars/${userID}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+
+        })
+
         card.appendChild(img);
         card.appendChild(title);
         card.appendChild(button);
+        card.appendChild(buttonRemove);
         container.appendChild(card);
       });
     })
@@ -283,6 +297,8 @@ function MyAnnouncePeace(){
         button.textContent = "Ver Anúncio";
         button.classList.add("btn-show");
 
+      
+
         card.appendChild(img);
         card.appendChild(title);
         card.appendChild(button);
@@ -332,6 +348,14 @@ async function profileFunc() {
     console.error("Erro ao buscar dados do usuário:", error);
   }
 }
+
+
+function logout() {
+  localStorage.removeItem("token");
+  alert("Você foi desconectado com sucesso!");
+  window.location.href ="index.html";
+}
+
 
 </script>
 </html>
