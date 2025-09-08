@@ -69,6 +69,11 @@
       <div id="logged-in" class="hidden">
         <h1>ANUNCIAR</h1>
         <form id="carForm">
+            <label>Tipo de Anúncio:</label>
+              <select id="announceType" name="type" required>
+                <option value="cars">Carros</option>
+                <option value="peace">Peças</option>
+              </select>
           <label>Título do anúncio:</label>
           <input
             type="text"
@@ -128,36 +133,47 @@
     </section>
     <script>
      
+document
+  .getElementById("carForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); 
 
-      document
-        .getElementById("carForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Impede o envio padrão do formulário
+    const token = localStorage.getItem("token"); 
+    const formData = new FormData(this); 
 
-          const token = localStorage.getItem("token"); // Obtém o token do localStorage
-          const formData = new FormData(this); // Cria um objeto FormData com os dados do formulário
+    // Verifica o tipo de anúncio selecionado
+    const type = document.getElementById("announceType").value; // Assumindo que você tem um campo select com id "announceType"
+    let url = "";
 
-          // Envia a requisição POST para o servidor
-          fetch("http://localhost:4200/cars", {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${token}`, // Adiciona o token ao cabeçalho de autorização
-            },
-            body: formData, // Inclui o FormData no corpo da requisição
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              if (data && data._id) {
-                alert("Anúncio criado com sucesso!");
-              } else {
-                alert("Erro ao criar o anúncio: " + data.msg);
-              }
-            })
-            .catch((error) => {
-              console.error("Erro:", error);
-              alert("Ocorreu um erro ao tentar criar o anúncio.");
-            });
-        });
+    if (type === "cars") {
+      url = "http://localhost:4200/cars";
+    } else if (type === "peace") {
+      url = "http://localhost:4200/peace";
+    } else {
+      alert("Selecione um tipo de anúncio válido!");
+      return;
+    }
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`, 
+      },
+      body: formData, // Inclui o FormData no corpo da requisição
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data && data._id) {
+          alert("Anúncio criado com sucesso!");
+        } else {
+          alert("Erro ao criar o anúncio: " + (data.msg || "Verifique os dados"));
+        }
+      })
+      .catch((error) => {
+        console.error("Erro:", error);
+        alert("Ocorreu um erro ao tentar criar o anúncio.");
+      });
+  });
     </script>
     <script src="core/app.js"></script>
   </body>

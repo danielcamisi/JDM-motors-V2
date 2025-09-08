@@ -51,21 +51,24 @@ function carregar() {
 }
 
 function carregarPeace() {
-  fetch("http://localhost:4200/peace")
+  fetch("http://localhost:4200/peace/list")
     .then((response) => response.json())
-    .then((cars) => {
-      const container = document.getElementById("cars-container");
+    .then((peaces) => {
+      const container = document.getElementById("peace-container");
+      container.innerHTML = ""; // limpar cards antigos
 
-      cars.map((car) => {
+      peaces.forEach((peace) => {
         const card = document.createElement("div");
         card.classList.add("card");
 
         const img = document.createElement("img");
-        img.src = car.image;
-        img.alt = car.name;
+        img.src = peace.img.startsWith("/uploads/")
+          ? `http://localhost:4200${peace.img}`
+          : `http://localhost:4200/uploads/${peace.img}`; // ✅ certifique-se que este caminho está acessível
+        img.alt = peace.announceName;
 
         const title = document.createElement("h3");
-        title.textContent = car.name;
+        title.textContent = peace.announceName;
 
         const button = document.createElement("button");
         button.textContent = "Ver Anúncio";
@@ -78,7 +81,7 @@ function carregarPeace() {
       });
     });
 }
-
+ 
 
 function viewStorage() {
   window.location.href = "cars.html";
@@ -115,6 +118,7 @@ function goToProfile() {
 }
 
 window.onload = function () {
+  carregarPeace();
   carregar();
   checkLoginStatus();
 };
